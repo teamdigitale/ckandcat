@@ -1,7 +1,31 @@
-### Ckan + plugin dcat + dcat-ap-it Docker images ### 
+### Docker containers for ckan + plugin dcat + dcat-ap-it ### 
 
---- Follow this step to run Docker images for Ckan ---
+Requirements for run ckan container:
+- docker 
+- docker compose
+	
 
+	- Ckan 2.6.2 
+		Extensions:
+		0	"stats"
+		1	"text_view"
+		2	"image_view"
+		3	"recline_view"
+		4	"harvest"
+		5	"ckan_harvester"
+		6	"dcat"
+		7	"dcat_rdf_harvester"
+		8	"dcat_json_harvester"
+		9	"dcat_json_interface"
+		10	"dcatapit_pkg"
+		11	"dcatapit_org"
+		12	"dcatapit_config"
+		13	"dcatapit_harvester"
+	- Solr 6.2.1
+	- Redis server v=4.0.0 sha=00000000:0 malloc=jemalloc-4.0.3 bits=64 build=77e2b28390619b67
+	- PostgreSQL 9.6 
+
+# Follow this step to run Docker images for:
 
 1) Download from git Ckan docker source:
 
