@@ -1,9 +1,10 @@
-### Docker containers for ckan + plugin dcat + dcat-ap-it ### 
+# Docker containers for ckan + plugin dcat + dcat-ap-it
 
-Requirements for run ckan container:
+##Requirements for run ckan container:
 - docker 
 - docker compose
 	
+## Container images details:
 
 	- Ckan 2.6.2 
 		Extensions:
@@ -21,13 +22,16 @@ Requirements for run ckan container:
 		11	"dcatapit_org"
 		12	"dcatapit_config"
 		13	"dcatapit_harvester"
+
 	- Solr 6.2.1
+	
 	- Redis server v=4.0.0 sha=00000000:0 malloc=jemalloc-4.0.3 bits=64 build=77e2b28390619b67
+	
 	- PostgreSQL 9.6 
 
-# Follow this step to run Docker images for:
+## Follow this step to run Docker images:
 
-1) Download from git Ckan docker source:
+1) Download from git ckan docker-compose file:
 
 	git clone https://github.com/lorenzoeusepi77/ckandcat.git
 
@@ -35,29 +39,31 @@ Requirements for run ckan container:
 
 2) Run Ckan docker container with docker compose:
 
-	A) Execute first command to create ckan container:
+	A) Execute follow command to create ckan container:
 
 		docker-compose up -d
 	
-	B) Load Vocabulary in ckan container:
+	B) Load "ckan vocabulary" in ckan container:
 	
 		docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
 
 
-- Access ckan server from browser at this link:
+3) Access ckan server with browser at this link:
 
 	http://localhost:5000
 	
 
-Ckan Sysadmin Account 
+You can use as ckan "sysadmin" account following credential: 
 
 	User: ckanadmin
 	Password: ckanpassword
 
-* Change at first login
+	* Change at first login
 
 
-3) If you need to download Docker cloud images:
+### Detailed informations about ckan docker images
+
+1) If you need to download Docker cloud images from docker public repository execute:
 
 	docker pull lorenzoeusepi77/ckan16
 
@@ -67,3 +73,15 @@ Ckan Sysadmin Account
 
         docker pull redis
 
+2) Git repository for docker images lorenzoeusepi77/ckan16
+
+	https://github.com/lorenzoeusepi77/ckan16.git
+	
+	Info:
+
+3) Git repository for docker images lorenzoeusepi77/solr
+
+	https://github.com/lorenzoeusepi77/solr.git
+	
+	Info:
+	
