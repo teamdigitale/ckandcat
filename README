@@ -11,10 +11,18 @@
 
 2) Run Ckan docker container with docker compose:
 
-	docker-compose up -d
-	
-	docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
+	A) Execute first command to create ckan container:
 
+		docker-compose up -d
+	
+	B) Load Vocabulary in ckan container:
+	
+		docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
+
+
+	Access ckan server from browser at this link:
+
+	http://localhost:5000
 
 
 
