@@ -1,0 +1,30 @@
+### Ckan + plugin dcat + dcat-ap-it Docker images ### 
+
+--- Follow this step to run Docker images for Ckan ---
+
+
+1) Download from git Ckan docker source:
+
+	git clone https://github.com/lorenzoeusepi77/ckandcat.git
+
+        cd ckandcat
+
+2) Run Ckan docker container with docker compose:
+
+	docker-compose up -d
+	
+	docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
+
+
+
+
+3) If you need to download Docker cloud images:
+
+	docker pull lorenzoeusepi77/ckan16
+
+        docker pull ckan/postgresql
+
+        docker pull lorenzoeusepi77/solr
+
+        docker pull redis
+

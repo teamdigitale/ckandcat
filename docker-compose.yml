@@ -1,0 +1,25 @@
+ckan:
+  container_name: ckandcat
+  image: lorenzoeusepi77/ckan16:latest
+
+  links:
+      - db
+      - solr
+      - redis
+  ports:
+      - "5000:5000"
+db:
+  container_name: db
+  image: ckan/postgresql:latest
+  ports:
+      - "5432:5432"
+solr:
+  container_name: solr
+  image: lorenzoeusepi77/solr:latest
+  ports:
+      - "8983:8983"
+redis:
+  container_name: redis
+  image: redis:latest
+  ports:
+      - "6379:6379"
