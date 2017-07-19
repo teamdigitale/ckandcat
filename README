@@ -20,10 +20,17 @@
 		docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
 
 
-	Access ckan server from browser at this link:
+- Access ckan server from browser at this link:
 
 	http://localhost:5000
+	
 
+Ckan Sysadmin Account 
+
+	User: ckanadmin
+	Password: ckanpassword
+
+* Change at first login
 
 
 3) If you need to download Docker cloud images:
