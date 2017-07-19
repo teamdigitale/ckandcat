@@ -77,11 +77,34 @@ You can use as ckan "sysadmin" account following credential:
 
 	https://github.com/lorenzoeusepi77/ckan16.git
 	
-	Info:
+	How to build image:
+
+  		git clone https://github.com/lorenzoeusepi77/ckan16.git
+
+  		cd ckan16
+		
+		docker build -t ckan16 .
 
 3) Git repository for docker images lorenzoeusepi77/solr
 
 	https://github.com/lorenzoeusepi77/solr.git
 	
-	Info:
-	
+	How to build image:
+
+  		git clone https://github.com/lorenzoeusepi77/solr.git
+
+  		cd solr
+
+  		docker build -t solr .
+  
+  
+## How to Push image on your own repository:
+
+  docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+  
+  docker push NAME[:TAG]
+  
+  Example:
+  
+    docker tag solr myRegistry.com/solr
+    docker push myRegistry.com/solr
