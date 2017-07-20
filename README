@@ -1,4 +1,4 @@
-#Docker containers for ckan + plugin dcat + dcat-ap-it#
+# Docker containers for ckan + plugin dcat + dcat-ap-it #
 
 ##Requirements for run ckan container:
 - docker 
@@ -84,6 +84,9 @@ You can use as ckan "sysadmin" account following credential:
   		cd ckan16
 		
 		docker build -t ckan16 .
+	
+	NOTE: Git repository contains folder needed for future implementations of other plugins. 
+
 
 3) Git repository for docker images lorenzoeusepi77/solr
 
