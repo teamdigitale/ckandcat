@@ -39,58 +39,57 @@
 
 2) Run Ckan docker container with docker compose:
 
-	A) Execute follow command to create ckan container:
+  A) Execute follow command to create ckan container:
 
-		docker-compose up -d
+	docker-compose up -d
 	
-	B) Load "ckan vocabulary" in ckan container:
+  B) Load "ckan vocabulary" in ckan container:
 	
-		docker exec -it ckandcat /bin/bash -c ./ckan-init.sh
+	docker exec -it ckandcat /bin/bash -c ./ckan-init.sh
 
-		NOTE: NOTE: Run this command just first time you exec ckan docker
+	NOTE: NOTE: Run this command just first time you exec ckan docker
 	
 	
-      CKAN Account:
-      You can use as ckan "sysadmin" account following credential: 
+  CKAN Account:
+  You can use as ckan "sysadmin" account following credential: 
+	
+  User: ckanadmin
+  Password: ckanpassword
 
-	User: ckanadmin
-	Password: ckanpassword
-
-	* Change at first login
+  * Change at first login
 	
 
 3) Access ckan server with browser at this link:
 	
-	#CKAN
+  #CKAN
 	
-		http://localhost:5000
+	http://localhost:5000
 
 
-	# CKAN-HARVEST
+  # CKAN-HARVEST
 	
-		http://localhost:5000/harvest
+	http://localhost:5000/harvest
 	
 	
-     If you need to use harvesting function:
+  If you need to use harvesting function:
 	
-     a) Open a first bash on container: execute following commands (*leave bash opened):
+  a) Open a first bash on container: execute following commands (*leave bash opened):
 		
-	docker exec -it ckandcat /bin/bash
+  docker exec -it ckandcat /bin/bash
 		
-	. /usr/lib/ckan/default/bin/activate 
+  . /usr/lib/ckan/default/bin/activate 
 		
-	paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini
+  paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini
 
 
 
-     b) Open a second bash on container: execute following commands (*leave bash opened):
+  b) Open a second bash on container: execute following commands (*leave bash opened):
 
-	docker exec -it ckandcat /bin/bash
+  docker exec -it ckandcat /bin/bash
 	
-	. /usr/lib/ckan/default/bin/activate 
+  . /usr/lib/ckan/default/bin/activate 
 
-	paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini
-
+  paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini
 
 
 
