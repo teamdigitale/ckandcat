@@ -45,12 +45,15 @@
 	
 	B) Load "ckan vocabulary" in ckan container:
 	
-		docker exec -it ckandcat /bin/bash -c ./ckan-vocabulary.sh
+		docker exec -it ckandcat /bin/bash -c ./ckan-init.sh
 
+		NOTE: NOTE: Run this command just first time you exec ckan docker
 
 3) Access ckan server with browser at this link:
 
 	http://localhost:5000
+	
+	http://localhost:5000/harvest
 	
 
 You can use as ckan "sysadmin" account following credential: 
