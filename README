@@ -86,19 +86,20 @@
 
   	ps -ef
 	
-	You need to find both this process:
-	/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester gather_consumer -c /etc/ckan/default/ckan.ini
-	/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester fetch_consumer -c /etc/ckan/default/ckan.ini
+You need to find both this process as output of "ps -ef" command:
+/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester gather_consumer -c /etc/ckan/default/ckan.ini
+/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester fetch_consumer -c /etc/ckan/default/ckan.ini
+
 
   If one process is missing you can restart it with following commands:
   		
-  . /usr/lib/ckan/default/bin/activate 
-  nohup paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini &
+. /usr/lib/ckan/default/bin/activate 
+nohup paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini &
   
   or
   
-  . /usr/lib/ckan/default/bin/activate
-  nohup paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini &
+. /usr/lib/ckan/default/bin/activate
+nohup paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini &
 
 
 
