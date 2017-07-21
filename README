@@ -47,7 +47,7 @@
 	
 	docker exec -it ckandcat /bin/bash -c ./ckan-init.sh
 
-	NOTE: NOTE: Run this command just first time you exec ckan docker
+	NOTE: Run this command just first time you exec ckan docker
 	
 	
   CKAN Account:
@@ -71,25 +71,34 @@
 	http://localhost:5000/harvest
 	
 	
-  If you need to use harvesting function:
+  Ckan start automatically harvesting function.
+  
+  You can see logs during harvesting import with following command:
+  
+  	docker logs ckandcat -f
+  
+  If there is some error during harvesting you can connect to cocker container, 
+  verify if some process are dead and restart the harvesting with following commands:
+  
+  Connect to ckan container and verify process:
+  
+  	docker exec -it ckandcat /bin/bash
+
+  	ps -ef
 	
-  a) Open a first bash on container: execute following commands (*leave bash opened):
-		
-  docker exec -it ckandcat /bin/bash
-		
+	You need to find both this process:
+	/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester gather_consumer -c /etc/ckan/default/ckan.ini
+	/usr/bin/python /usr/local/bin/paster --plugin=ckanext-harvest harvester fetch_consumer -c /etc/ckan/default/ckan.ini
+
+  If one process is missing you can restart it with following commands:
+  		
   . /usr/lib/ckan/default/bin/activate 
-		
-  paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini
-
-
-
-  b) Open a second bash on container: execute following commands (*leave bash opened):
-
-  docker exec -it ckandcat /bin/bash
-	
-  . /usr/lib/ckan/default/bin/activate 
-
-  paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini
+  nohup paster --plugin=ckanext-harvest harvester gather_consumer --config /etc/ckan/default/ckan.ini &
+  
+  or
+  
+  . /usr/lib/ckan/default/bin/activate
+  nohup paster --plugin=ckanext-harvest harvester fetch_consumer --config /etc/ckan/default/ckan.ini &
 
 
 
